@@ -14,6 +14,10 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.link *{
+    color: rgb(218, 59, 59);
+}
+
 
 header{
     background-repeat: no-repeat;
@@ -615,5 +619,6 @@ section .wave span:nth-child(3) {
     }
 
 }
+
 
 
