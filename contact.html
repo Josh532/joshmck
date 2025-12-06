@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh McKenzie website | expertise</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "mOzcF2n1uxcZh7yJ-",
+      });
+   })();
+</script>
+
+
+<script>
+  function sendMail() {
+    const btn = document.getElementById("submit-btn");
+
+    let params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value,
+    };
+
+    if (params.name === "" || params.email === "" || params.message === "") {
+        alert("Please fill out the required fields");
+        return;
+    }
+
+    btn.disabled = true;
+    btn.innerText = "Sending...";
+
+    emailjs.send("service_v6oadu8", "template_9t1oijo", params)
+        .then(function() {
+            alert("Email Sent!! I will get back to you soon.");
+            btn.innerText = "Please wait (60s)";
+            
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerText = "Submit";
+            }, 60000);
+        })
+        .catch(function(error) {
+            alert("Failed to send. Please try again.");
+            btn.disabled = false;
+            btn.innerText = "Submit";
+        });
+}
+</script>
+</head>
+
+
+<body>
+    <section>
+    <section class="scrollable">
+        <div class="content">
+            <header>
+                <nav>
+                    <ul class="desktop-links">
+                        <li class="one"><a href="index.html">//home</a></li>
+                        <li class="two"><a href="expertise.html">//expertise</a></li>
+                        <li class="three"><a href="portfolio.html">//portfolio</a></li>
+                          <li class="four"><a href="contact.html">//contact</a></li>
+                    </ul>
+
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+
+                <div class="off-screen-menu">
+                    <ul id="off-screen">
+                        <li class="one"><a href="index.html">//home</a></li>
+                        <li class="two"><a href="expertise.html">//expertise</a></li>
+                        <li class="three"><a href="portfolio.html">//portfolio</a></li>
+                        <li class="four"><a href="contact.html">//contact</a></li>
+                    </ul>
+                </div>
+            </header> 
+
+        <h1 class="text3">Contact</h1>
+        <p class="text2">Contact me any time</p>
+
+<form>
+    <input type="text" id="name" name="name" placeholder="Full name">
+
+    <input type="text" id="email" name="email" placeholder="Email">
+
+    <input type="text" id="subject" name="subject" placeholder="Subject">
+
+    <textarea id="message" name="message" rows="4" placeholder="Message"></textarea>
+
+   <button type="button" id="submit-btn" onclick="sendMail()">Submit</button>
+</form>
+        </section>
+            <script src="script.js"></script>
+</body>
+</html>
