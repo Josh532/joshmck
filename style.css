@@ -1,8 +1,19 @@
 body{
     margin: 0;
-    background-color: rgb(27, 27, 27);
+    background: #171717;
+    background: -webkit-linear-gradient(90deg, rgba(23, 23, 23, 1) 0%, rgba(43, 43, 43, 1) 50%, rgba(26, 26, 26, 1) 100%, rgba(36, 36, 36, 1) 93%);
+    background: -moz-linear-gradient(90deg, rgba(23, 23, 23, 1) 0%, rgba(43, 43, 43, 1) 50%, rgba(26, 26, 26, 1) 100%, rgba(36, 36, 36, 1) 93%);
+    background: linear-gradient(90deg, rgba(23, 23, 23, 1) 0%, rgba(43, 43, 43, 1) 50%, rgba(26, 26, 26, 1) 100%, rgba(36, 36, 36, 1) 93%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#171717", endColorstr="#242424", GradientType=1);
     min-height: 100vh;
 }
+
+.link a{
+    font-size: 28px;
+    color: rgb(218, 59, 59);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 
 header{
     background-repeat: no-repeat;
@@ -611,4 +622,5 @@ section .wave span:nth-child(3) {
     .subheading{
         font-size: 10px;
     }
+
 }
